@@ -1,0 +1,12 @@
+name: Execution des tests sur GH Actions
+
+on: [push]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - run: npm install
+      - run: npx cypress run
